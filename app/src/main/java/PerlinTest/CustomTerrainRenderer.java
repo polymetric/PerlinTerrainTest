@@ -152,16 +152,16 @@ public class CustomTerrainRenderer {
     public static boolean moveEnabled = true;
 
     public static void resetPosition() {
-//        vel.mul(0);
-//
-//        pos.y = 64;
-//        // shot p
-//        pos.x = -107.076F;
-//        pos.y = 95.362F;
-//        pos.z = 176.694F;
-//
-//        pitch = 16.800F;
-//        yaw = 213.450F;
+        vel.mul(0);
+
+        pos.y = 64;
+        // shot p
+        pos.x = -107.076F;
+        pos.y = 95.362F;
+        pos.z = 176.694F;
+
+        pitch = 16.800F;
+        yaw = 213.450F;
     }
 
     public static void handleMouse(Display display) {
