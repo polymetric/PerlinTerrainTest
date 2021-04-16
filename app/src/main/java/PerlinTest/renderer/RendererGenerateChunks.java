@@ -41,12 +41,15 @@ public class RendererGenerateChunks {
                 for (int x = 0; x < 16; x++) {
                     for (int z = 0; z < 16; z++) {
                         for (int y = 0; y < Chunk.CHUNK_HEIGHT; y++) {
+                            // base terrain
                             if (noise.sample((chunkX * 16 + x)/xzScale, y/yScale, (chunkZ * 16 + z)/xzScale) / (1 << octaves) * noiseAmplitude > (y-thresOffset)*threshScale) {
                                 blocks[Chunk.getIndexOf(x, y, z)] = 1;
                             }
+                            // place water
                             if (y <= 64 && blocks[Chunk.getIndexOf(x, y, z)] == 0) {
                                 blocks[Chunk.getIndexOf(x, y, z)] = 9;
                             }
+                            // place
                             if (y <= 64+3 && blocks[Chunk.getIndexOf(x, y, z)] == 1) {
                                 blocks[Chunk.getIndexOf(x, y, z)] = 12;
                             }
